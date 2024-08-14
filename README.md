@@ -5,6 +5,8 @@ This repository's exercise code is written by [emilybache](https://github.com/em
 The specifications about the Gilded Rose problem can be read [here](https://github.com/shreya888/GildedRose-Refactoring-Kata/blob/main/GildedRoseRequirements.md). The test and code and refractored accprding to the listed cases.
 
 ## Steps I followed
+The problem can be understood with the following flowchart:
+<img src="https://github.com/user-attachments/assets/5102bc5f-8c56-4eff-8899-f548bedb271d" alt="drawing" width="800"/>
 
 
 ## Things I learnt from this exercise
