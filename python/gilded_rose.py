@@ -25,10 +25,10 @@ class GildedRose(object):
         elif item.name == "Backstage passes":
             if item.sell_in < 0:  # Concert day
                 item.quality = 0
-            elif item.sell_in <= 5:
-                item.quality += 3
             else:
-                item.quality += 2
+                item.quality = item.quality + 3 if item.sell_in <= 5 else item.quality + 2
+        elif item.name == "Conjured":
+            item.quality = item.quality - 4 if item.sell_in < 0 else item.quality - 2
         else:  # general case
             item.quality = item.quality - 2 if item.sell_in < 0 else item.quality - 1
 
