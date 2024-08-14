@@ -8,27 +8,37 @@ The Gilded Rose Kata is a popular coding exercise designed to teach and practice
 For detailed specifications about the Gilded Rose problem, refer to the [requirement document](https://github.com/shreya888/GildedRose-Refactoring-Kata/blob/main/GildedRoseRequirements.md). The problem involves managing the quality of items in a store as their `sell_in` date approaches, with various rules for different item types.
 
 ## Solution Approach
+
 ### Flowchart
 Below is the flowchart that guided my refactoring process:
 <img src="https://github.com/user-attachments/assets/5102bc5f-8c56-4eff-8899-f548bedb271d" alt="drawing" width="800"/>
+
 ### Steps Followed
 1. **Initial Test Run**: Executed the existing test in `test_gilded_rose.py` as a baseline, which passed successfully.
 2. **Test Expansion**: Added tests for generic items (**`foo`**), followed by edge cases for specific items like - **`Aged Brie`**, **`Backstage passes`**, **`Conjured`**, and **`Sulfuras`**.
 3. **Test Corrections**: Addressed naming inconsistencies between the code and specifications that lead to test failure, ensuring that tests aligned correctly with the code's naming convention.
 4. **Test Refactoring**: Organized the tests into specific functions for each item type (`test_update_standard_item`, `test_update_aged_brie`, `test_update_sulfuras`, `test_update_backstage_passes`, `test_update_conjured`). Introduced a utility function, `assert_item_values`, for streamlined assertions. Ensured comprehensive tests in place.
 5. **Code Refactoring**: Renamed items and restructured the main code in `gilded_rose.py` to enhance clarity and maintainability.
-6. **DRY and SOLID Principles**: Applied DRY (Don't Repeat Yourself) and SOLID (S=Single-responsibility Principle, O=Open-closed Principle L=Liskov Substitution Principle I=Interface Segregation Principle D=Dependency Inversion Principle) principles to improve maintainability and extensibility. Key changes included:
+6. **DRY and SOLID Principles**: Applied DRY (Don't Repeat Yourself) and SOLID (S=Single-responsibility, O=Open-closed, L=Liskov Substitution, I=Interface Segregation, D=Dependency Inversion) principles to improve maintainability and extensibility. Key changes included:
    * Introducing new functions: `update`, `_update_quality`, `_update_sell_in`, `_check_quality_bounds`, `_aged_brie_update`, `_backstage_passes_update`, `_conjured_update`, `_conjured_update`
    * Defining constants: `MAX_QUALITY`, `MIN_QUALITY`
    * Streamlining logic and using descriptive function names.
-7. **Final Tests**: Re-ran all tests to ensure the refractored code was functioning as expected.
+7. **Final Tests**: Re-ran all tests to ensure the refactored code was functioning as expected.
 8. **Adding 'Conjured' Support**: Developed tests for the `Conjured` item type, which initially failed, as expected. Implemented the necessary logic to handle `Conjured` items, and all tests passed successfully.
 
+### Transition to Pytest
+The existing `unittest` framework was migrated to `pytest` to leverage its enhanced flexibility, organization, and maintainability:
+1. **Fixture Implementation**: A `gilded_rose` fixture was introduced to instantiate the `GildedRose` class for each test function, thereby minimizing code duplication and ensuring consistent test setups.
+2. **Clear Test Function Segmentation**: Each item type now has a dedicated test function, facilitating better organization and making it easier to identify and understand the test cases associated with each item type.
+3. **Parametrized Testing**: The use of `@pytest.mark.parametrize` within test functions allows for the definition of multiple test cases in a concise manner. This not only streamlines test case creation but also enhances the clarity of the test definitions, while ensuring that each item type's behavior is thoroughly and independently validated
+4. **Centralized Assertion Logic**: The `assert_item_values` helper function consolidates the assertion logic, promoting code reuse and ensuring that the test functions remain focused on their specific scenarios.
+
+This approach leverages the strengths of pytest to create a testing framework that is both robust and easy to maintain. By focusing on reusability and clear organization, the aim was to ensure that the test suite remains scalable as the codebase evolves.
 
 ## Key Learnings
 1. **Efficient Code Writing**: Improved skills in writing efficient, maintainable code.
 2. **Test-Driven Development (TDD)**: Reinforced the importance of TDD in software development.
-3. **Pycharm IDE Shortcuts**: Enchanced productivity using PyCharm shortcuts learned from online tutorials like [this one](https://www.youtube.com/watch?v=ofR72_PxDac).
+3. **Pycharm IDE Shortcuts**: Enhanced productivity using PyCharm shortcuts learned from online tutorials like [this one](https://www.youtube.com/watch?v=ofR72_PxDac).
 4. **Don't repeat yourself (DRY) and SOLID Principles**: Deepened understanding of DRY and [SOLID](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) principles.
 5. **Flowcharting**: Utilized tools like [Mermaid](https://mermaid.live/) and [Draw.io](https://app.diagrams.net/) to visualize and understand the problem.
 6. **Testing Strategies**: Learned about different testing strategies such as edge cases, corner cases, base cases, and boundary cases from [this resource](https://softwareengineering.stackexchange.com/questions/125587/what-are-the-difference-between-an-edge-case-a-corner-case-a-base-case-and-a-b).
