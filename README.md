@@ -34,13 +34,13 @@ Below is the flowchart that guided my refactoring process:
 
 
 ## Key Learnings
-1. **Efficient Code Writing**: I learned to write more efficient and maintainable code.
-2. **Test-Driven Development (TDD)**: This exercise reinforced the importance of the TDD cycle.
-3. **Pycharm IDE Shortcuts**: I improved my efficiency by learning PyCharm IDE shortcuts from online tutorials like [this one](https://www.youtube.com/watch?v=ofR72_PxDac).
-4. **Don't repeat yourself (DRY) and SOLID Principles**: I deepened my understanding of the importance of following the DRY and [SOLID](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) principles in software development.
-5. **Flowcharting**: Creating flowcharts helped me visualize and understand the problem better. For this I used [Mermaid](https://mermaid.live/) and [Draw.io](https://app.diagrams.net/).
-6. **Different types of tests**: Learnt about edge case, corner case, base case, and boundary case from [here](https://softwareengineering.stackexchange.com/questions/125587/what-are-the-difference-between-an-edge-case-a-corner-case-a-base-case-and-a-b).
-7. **Pytest vs Unittest**: I got to know different libararies in [Python for testing](https://realpython.com/python-testing/) and [compared](https://www.browserstack.com/guide/pytest-vs-unittest) their pros and cons.
+1. **Efficient Code Writing**: Improved skills in writing efficient, maintainable code.
+2. **Test-Driven Development (TDD)**: Reinforced the importance of TDD in software development.
+3. **Pycharm IDE Shortcuts**: Enchanced productivity using PyCharm shortcuts learned from online tutorials like [this one](https://www.youtube.com/watch?v=ofR72_PxDac).
+4. **Don't repeat yourself (DRY) and SOLID Principles**: Deepened understanding of DRY and [SOLID](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) principles.
+5. **Flowcharting**: Utilized tools like [Mermaid](https://mermaid.live/) and [Draw.io](https://app.diagrams.net/) to visualize and understand the problem.
+6. **Testing Strategies**: Learned about different testing strategies such as edge cases, corner cases, base cases, and boundary cases from [this resource](https://softwareengineering.stackexchange.com/questions/125587/what-are-the-difference-between-an-edge-case-a-corner-case-a-base-case-and-a-b).
+7. **Pytest vs Unittest**: Gained insight into different [Python testing libraries](https://realpython.com/python-testing/) and compared their pros and cons through [this article](https://www.browserstack.com/guide/pytest-vs-unittest).
 
 
 ## Code Overview
