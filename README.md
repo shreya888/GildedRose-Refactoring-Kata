@@ -12,25 +12,17 @@ For detailed specifications about the Gilded Rose problem, refer to the [require
 Below is the flowchart that guided my refactoring process:
 <img src="https://github.com/user-attachments/assets/5102bc5f-8c56-4eff-8899-f548bedb271d" alt="drawing" width="800"/>
 ### Steps Followed
-1. **Initial Test Run**: I started by running the existing test in `test_gilded_rose.py`, which passed successfully. This test served as a baseline.
-2. **Test Expansion**: I added more tests based on the provided specifications. Initially, I wrote basic tests for generic items (**`foo`**), followed by edge cases and boundary conditions for specific items - **`Aged Brie`**, **`Backstage passes`**, **`Conjured`**, and **`Sulfuras`**.
-3. **Test Corrections**: Some tests failed due to naming inconsistencies between the code and specifications. I corrected these discrepancies to align the tests with the code.
-4. **Test Refactoring**: I refactored the tests into distinct functions for each item type, improving readability and organization:
-   1. `test_update_standard_item`
-   2. `test_update_aged_brie`
-   3. `test_update_sulfuras`
-   4. `test_update_backstage_passes`
-   5. `test_update_conjured`
-   
-   I also introduced an `assert_item_values` function for streamlined assertions.
-
-5. **Code Refactoring**: With comprehensive tests in place, I moved on to refactoring the main code in gilded_rose.py. This involved renaming items and restructuring the code for clarity and maintainability.
-6. **DRY and SOLID Principles**: I applied the DRY (Don't Repeat Yourself) and SOLID (S=Single-responsibility Principle, O=Open-closed Principle L=Liskov Substitution Principle I=Interface Segregation Principle D=Dependency Inversion Principle) principles to make the code more maintainable and extensible. Key changes included:
+1. **Initial Test Run**: Executed the existing test in `test_gilded_rose.py` as a baseline, which passed successfully.
+2. **Test Expansion**: Added tests for generic items (**`foo`**), followed by edge cases for specific items like - **`Aged Brie`**, **`Backstage passes`**, **`Conjured`**, and **`Sulfuras`**.
+3. **Test Corrections**: Addressed naming inconsistencies between the code and specifications that lead to test failure, ensuring that tests aligned correctly with the code's naming convention.
+4. **Test Refactoring**: Organized the tests into specific functions for each item type (`test_update_standard_item`, `test_update_aged_brie`, `test_update_sulfuras`, `test_update_backstage_passes`, `test_update_conjured`). Introduced a utility function, `assert_item_values`, for streamlined assertions. Ensured comprehensive tests in place.
+5. **Code Refactoring**: Renamed items and restructured the main code in `gilded_rose.py` to enhance clarity and maintainability.
+6. **DRY and SOLID Principles**: Applied DRY (Don't Repeat Yourself) and SOLID (S=Single-responsibility Principle, O=Open-closed Principle L=Liskov Substitution Principle I=Interface Segregation Principle D=Dependency Inversion Principle) principles to improve maintainability and extensibility. Key changes included:
    * Introducing new functions: `update`, `_update_quality`, `_update_sell_in`, `_check_quality_bounds`, `_aged_brie_update`, `_backstage_passes_update`, `_conjured_update`, `_conjured_update`
    * Defining constants: `MAX_QUALITY`, `MIN_QUALITY`
    * Streamlining logic and using descriptive function names.
-7. **Final Tests**: After refactoring, I re-ran all tests to ensure the code was functioning as expected.
-8. **Adding 'Conjured' Support**: I added tests for the "Conjured" item type, which initially failed, as expected. I then implemented the necessary logic to handle "Conjured" items, and all tests passed successfully.
+7. **Final Tests**: Re-ran all tests to ensure the refractored code was functioning as expected.
+8. **Adding 'Conjured' Support**: Developed tests for the `Conjured` item type, which initially failed, as expected. Implemented the necessary logic to handle `Conjured` items, and all tests passed successfully.
 
 
 ## Key Learnings
